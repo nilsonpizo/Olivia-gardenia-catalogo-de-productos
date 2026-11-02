@@ -1,0 +1,341 @@
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eventos Varios - Olivia Gardenia</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:ital,wght@0,600;3,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="estilos.css">
+<style>
+  /* Estilos fijos para que los cuadros se vean elegantes, simétricos y sin espacios vacíos */
+  .galeria-section {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 40px 20px !important;
+  }
+  .grid-galeria {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 30px !important;
+    justify-content: center !important;
+  }
+  .grid-galeria .card {
+    background: #fff !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .grid-galeria .card img {
+    width: 100% !important;
+    height: 250px !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+  .grid-galeria .card-body {
+    padding: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+    justify-content: space-between !important;
+  }
+  .grid-galeria .card-body h3 {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 1.25rem !important;
+    margin-bottom: 10px !important;
+    color: #333 !important;
+  }
+  .grid-galeria .card-body p {
+    font-size: 0.95rem !important;
+    color: #666 !important;
+    line-height: 1.5 !important;
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+<div class="logo-container">
+<a href="./index.html" class="logo-shape" title="Volver al Inicio">
+<img src="logo.png" alt="Logo" class="logo-img">
+</a>
+<div class="branding">
+<h1>Olivia Gardenia</h1>
+<p class="eslogan">Hazlo grande, hazlo único, hazlo con Olivia Gardenia</p>
+</div>
+</div>
+<nav class="nav">
+<a href="./index.html">Inicio</a>
+<a href="./index.html#galeria">Galería</a>
+<a href="#contacto">Contacto</a>
+<div class="nav-socials">
+<a href="https://www.instagram.com/olivia.gardenia_/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://www.facebook.com/search/top?q=Olivia%20Gardenia" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+<a href="https://www.tiktok.com/@olivia.gardenia7" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+</div>
+</nav>
+</header>
+
+<section class="galeria-section">
+<h2>Eventos Varios</h2>
+<p class="galeria-intro" style="text-align: center; margin-bottom: 30px;">Celebraciones especiales, aniversarios y montajes personalizados a tu medida.</p>
+
+<div class="grid-galeria" id="gridGaleria">
+  <!-- Las tarjetas cargan de forma dinámica y limpia -->
+</div>
+</section>
+
+<!-- Sección de Redes Sociales -->
+<section class="social-section" id="contacto">
+<h3>Síguenos en Redes Sociales</h3>
+<p>Descubre más contenido exclusivo y fotos de nuestros eventos en vivo.</p>
+<div class="social-buttons">
+<a href="https://www.instagram.com/olivia.gardenia_/" target="_blank" class="btn-social btn-social-instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
+<a href="https://www.facebook.com/search/top?q=Olivia%20Gardenia" target="_blank" class="btn-social btn-social-facebook"><i class="fa-brands fa-facebook"></i> Facebook</a>
+<a href="https://www.tiktok.com/@olivia.gardenia7" target="_blank" class="btn-social btn-social-tiktok"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+</div>
+</section>
+
+<footer class="footer">
+<div class="footer-links">
+<a href="#">Política de Privacidad</a>
+<a href="#">Términos y Condiciones</a>
+</div>
+<p>&copy; 2026 OLIVIA GARDENIA</p>
+<p class="designed">Diseñado pensando en tu felicidad.</p>
+</footer>
+
+<!-- Botón con el signo más (+) flotante -->
+<button class="fab-btn" id="openModalBtn" title="Subir nuevo producto">+</button>
+
+<!-- Ventana emergente (modal) para subir archivos -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-content">
+    <button class="close-modal" id="closeModalBtn">&times;</button>
+    <h2>Subir Nuevo Producto</h2>
+    
+    <form id="uploadForm">
+      <div class="form-group">
+        <label for="imageInput">Seleccionar Imagen:</label>
+        <input type="file" id="imageInput" accept="image/*" required>
+      </div>
+
+      <div class="form-group">
+        <label for="categoryInput">Categoría:</label>
+        <select id="categoryInput">
+          <option value="Eventos Varios" selected>Eventos Varios</option>
+          <option value="Bodas">Bodas</option>
+          <option value="Quinceañeras">Quinceañeras</option>
+          <option value="Bautizos">Bautizos</option>
+          <option value="Comunion">Primera Comunión</option>
+          <option value="Iglesias">Iglesias</option>
+          <option value="Cumpleaños">Cumpleaños</option>
+          <option value="Anchetas">Anchetas</option>
+          <option value="Arreglos Florales">Arreglos Florales</option>
+          <option value="Desayunos Sorpresa">Desayunos Sorpresa</option>
+          <option value="Globos">Arte en Globos</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="titleInput">Título del Producto:</label>
+        <input type="text" id="titleInput" placeholder="Ej. Celebración Especial" required>
+      </div>
+
+      <div class="form-group">
+        <label for="descInput">Descripción o Detalles:</label>
+        <textarea id="descInput" rows="3" placeholder="Detalles del arreglo..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">Publicar en el Catálogo</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const gridGaleria = document.getElementById('gridGaleria');
+    const TOTAL_FOTOS_CARPETA = 55;
+
+    // Diccionario con títulos y descripciones (la foto 16 está excluida para ser portada)
+    const textosEventosVarios = {
+      1: { title: "Arreglo Floral para Recibimiento", desc: "Hermoso diseño de follaje y flores dispuesto en columnas para dar la bienvenida al evento." },
+      2: { title: "Montaje de Mesas y Espacio Institucional", desc: "Elegante disposición de mesas y espacios amplios preparados para congresos y reuniones." },
+      3: { title: "Mesa Principal con Follaje y Velas", desc: "Decoración sofisticada con caminos florales y detalles iluminados para cenas especiales." },
+      4: { title: "Composición Tropical de Hojas y Flores", desc: "Exuberante arreglo con hojas de palma y flores exóticas que aporta frescura al ambiente." },
+      5: { title: "Vista General del Salón Preparado", desc: "Espacio amplio y ordenado con ambientación profesional lista para recibir a los invitados." },
+      6: { title: "Presidium y Panel de Honor", desc: "Montaje formal en tarima con arreglos florales institucionales y banderas protocolarias." },
+      7: { title: "Stand Decorativo Tradicional", desc: "Ambientación temática y artesanal llena de color, flores y elementos culturales." },
+      8: { title: "Arreglo Floral con Hojas Exóticas", desc: "Composición moderna de hojas verdes y flores delicadas sobre mobiliario elegante." },
+      9: { title: "Puesto de Comida Típica Temática", desc: "Decoración detallada con flores y elementos rústicos para ambientar estaciones gastronómicas." },
+      10: { title: "Estación Culinaria Decorada", desc: "Montaje llamativo de toldo y barra rodeado de abundante ornamentación floral." },
+      11: { title: "Fachada Temática Iluminada", desc: "Estructura exterior adornada con flores y luces para un recibimiento nocturno mágico." },
+      12: { title: "Torre de Flores y Follaje", desc: "Imponente columna decorativa cubierta de flores multicolores y detalles alegres." },
+      13: { title: "Centro de Mesa Solemne", desc: "Arreglo floral refinado en tonos blancos y verdes sobre bases elegantes." },
+      14: { title: "Pastel y Mesa de Dulces", desc: "Pastel decorado rodeado de finos arreglos florales en tonos claros y románticos." },
+      15: { title: "Salón de Recepciones Minimalista", desc: "Decoración interior con arreglos florales blancos distribuidos a lo largo del salón." },
+      17: { title: "Montaje Floral en Tonos Blancos", desc: "Exquisita selección de flores blancas dispuestas con armonía para un evento elegante." },
+      18: { title: "Pared Decorativa con Flores Suspendidas", desc: "Diseño moderno con cascadas de flores y paneles artísticos iluminados." },
+      19: { title: "Ambiente con Iluminación Cálida y Follaje", desc: "Decoración de paredes y techos con elementos naturales y luces ambientales." },
+      20: { title: "Cielo Estrellado y Luces Decorativas", desc: "Montaje de iluminación cenital con cortinas de luces para crear un ambiente mágico." },
+      21: { title: "Estructura Decorada con Flores Colgantes", desc: "Arreglos florales en cascada que descienden con elegancia sobre los accesos." },
+      22: { title: "Guirnaldas Florales en Techo", desc: "Detalles decorativos en altura con flores combinadas para enmarcar el espacio." },
+      23: { title: "Alas Decorativas Iluminadas", desc: "Panel temático con diseño de alas artísticas ideal para fotografías memorables." },
+      24: { title: "Lámpara Rústica Colgante y Flores Rosas", desc: "Foco esférico tejido con iluminación cálida acompañado de abundante decoración floral rosa." },
+      25: { title: "Túnel Colgante de Flores Blancas y Rosas", desc: "Elegante pasillo superior adornado con cascadas florales y luces tenues." },
+      26: { title: "Instalación de Iluminación y Lámparas", desc: "Proceso de montaje de lámparas esféricas y detalles de iluminación ambiental." },
+      27: { title: "Ambientación Nocturna con Esferas de Luz", desc: "Efecto visual cálido con lámparas tejidas y cortinas iluminadas al fondo." },
+      28: { title: "Pasillo Decorado con Luces y Follaje", desc: "Estructura interior con iluminación perimetral y elementos naturales colgantes." },
+      29: { title: "Cúpula de Luces y Flores Colgantes", desc: "Diseño superior sofisticado con luces esféricas distribuidas en todo el techo." },
+      30: { title: "Cascada de Rosas y Follaje en Pared", desc: "Hermoso muro tapizado con flores rosadas y blancas para un fondo fotográfico único." },
+      31: { title: "Salón con Estaciones de Madera e Iluminación", desc: "Montaje interior con mesas de madera iluminadas y techos decorados con luces." },
+      32: { title: "Mesa de Postres y Bocaditos Finos", desc: "Exhibición elegante de repostería fina acompañada de arreglos florales y bases de cristal." },
+      33: { title: "Estructura Metálica Decorativa", desc: "Diseño artístico en herrería fina adornado con detalles florales sutiles." },
+      34: { title: "Centro Floral Alargado para Mesa Principal", desc: "Composición floral colorida y fresca diseñada especialmente para destacar el frente de la mesa." },
+      35: { title: "Toldo Decorado con Cascadas Florales", desc: "Estructura superior vestida con telas vaporosas y arreglos florales colgantes." },
+      36: { title: "Mesa Imperial con Copas de Color", desc: "Banquete decorado con vajilla fina, cristalería verde y centros de mesa florales variados." },
+      37: { title: "Detalle de Montaje en Mesa de Invitados", desc: "Perspectiva cercana de la disposición de puestos, cubiertos y arreglos florales coloridos." },
+      38: { title: "Banquete al Aire Libre con Sillas de Madera", desc: "Disposición de mesas rústico-elegantes en entorno abierto con iluminación cálida." },
+      39: { title: "Preparativos y Montaje Detallado", desc: "Supervisión y diseño de la ambientación floral directamente en las mesas del evento." },
+      40: { title: "Mesa de Honor Iluminada con Velas", desc: "Espectacular mesa principal adornada con velas encendidas, flores y cristalería fina." },
+      41: { title: "Detalle de Papelería y Recuerdos en Mesa", desc: "Tarjetería personalizada y detalles finos dispuestos cuidadosamente en cada puesto." },
+      42: { title: "Arreglo Floral y Papelería Fina", desc: "Combinación armónica de flores coloridas y elementos impresos personalizados para los invitados." },
+      43: { title: "Mesa de Novios o Anfitriones Decorada", desc: "Faldón de mesa elegante cubierto por un exuberante arreglo floral en caída lateral." },
+      44: { title: "Cristalería y Decoración de Mesa Principal", desc: "Detalles finos de iluminación, copas verdes y centros de mesa sofisticados." },
+      45: { title: "Comedor Elegante con Estilo Romántico", desc: "Ambiente íntimo con velas, cristalería de época y arreglos florales discretos." },
+      46: { title: "Mesa Dulce e Iluminación Nocturna", desc: "Estación de postres rodeada de candelabros y arreglos florales en tonos blancos." },
+      47: { title: "Columna con Arreglo Floral Superior", desc: "Pedestal clásico decorado con una imponente composición floral en la parte alta." },
+      48: { title: "Centro de Mesa con Copas Verdes y Velas", desc: "Diseño de mesa sofisticado que combina elementos de cristal, velas y flores delicadas." },
+      49: { title: "Columna Decorativa con Base Iluminada", desc: "Elegante arreglo floral elevado sobre pedestal con iluminación interior." },
+      50: { title: "Pista de Baile e Iluminación Escénica", desc: "Montaje de tarima con pantallas, luces robóticas y pista espejada para gran celebración." },
+      51: { title: "Lounge Exterior con Iluminación", desc: "Mobiliario de descanso rodeado de naturaleza y luces tenues para la noche." },
+      52: { title: "Chimenea Decorada con Follaje", desc: "Elegante arreglo de chimenea interior adornado con flores y vegetación selecta." },
+      53: { title: "Panel de Recepción y Bienvenida", desc: "Estructura decorativa con arreglos florales y elementos de bienvenida personalizados." },
+      54: { title: "Banquete con Vajilla y Cristalería Fina", desc: "Mesa imperial decorada con mantelería delicada, velas y centros de mesa sofisticados." },
+      55: { title: "Cofre Decorativo con Arreglos Florales", desc: "Detalle central sobre mesa de madera con flores finas y cofre ornamentado." }
+    };
+
+    for (let i = 1; i <= TOTAL_FOTOS_CARPETA; i++) {
+      const numFormatted = i < 10 ? `0${i}` : `${i}`;
+      const fileName = `eventos-varios-${numFormatted}.jpg`;
+      
+      const card = document.createElement('div');
+      card.className = 'card';
+      
+      const img = new Image();
+      img.src = fileName;
+      
+      img.onload = function() {
+        // Si es la foto 16, se muestra limpia como portada (sin tarjeta de texto ni cuadro)
+        if (i === 16) {
+          card.innerHTML = `<img src="${fileName}" alt="Portada Eventos Varios" style="height: auto !important; max-height: 450px !important;">`;
+        } else {
+          const info = textosEventosVarios[i] || {
+            title: "Diseño y Celebración Especial",
+            desc: "Montaje y decoración personalizada creada con dedicación y estilo para hacer único este evento."
+          };
+          card.innerHTML = `
+            <img src="${fileName}" alt="${info.title}">
+            <div class="card-body">
+              <div>
+                <h3>${info.title}</h3>
+                <p>${info.desc}</p>
+              </div>
+            </div>
+          `;
+        }
+        gridGaleria.appendChild(card);
+      };
+    }
+
+    const saved = localStorage.getItem('og_catalog');
+    const dynamicProducts = saved ? JSON.parse(saved) : [];
+    const productosVarios = dynamicProducts.filter(p => p.category === 'Eventos Varios');
+
+    productosVarios.forEach(product => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <img src="${product.image}" alt="${product.title}">
+        <div class="card-body">
+          <div>
+            <h3>${product.title}</h3>
+            <p>${product.description}</p>
+          </div>
+          <div style="margin-top: 15px; text-align: right;">
+            <button onclick="deleteProduct(${product.id})" style="background-color: #ff4d4d; color: white; border: none; padding: 6px 12px; border-radius: 20px; cursor: pointer; font-size: 0.8rem;">Eliminar</button>
+          </div>
+        </div>
+      `;
+      gridGaleria.appendChild(card);
+    });
+
+    const openModalBtn = document.getElementById('openModalBtn');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const uploadForm = document.getElementById('uploadForm');
+    const imageInput = document.getElementById('imageInput');
+    const categoryInput = document.getElementById('categoryInput');
+    const titleInput = document.getElementById('titleInput');
+    const descInput = document.getElementById('descInput');
+
+    if(openModalBtn && modalOverlay) {
+      openModalBtn.addEventListener('click', () => modalOverlay.classList.add('active'));
+      closeModalBtn.addEventListener('click', () => modalOverlay.classList.remove('active'));
+      modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) modalOverlay.classList.remove('active');
+      });
+    }
+
+    if(uploadForm) {
+      uploadForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const file = imageInput.files[0];
+        const category = categoryInput.value;
+        const title = titleInput.value;
+        const description = descInput.value;
+
+        if (file) {
+          const reader = new FileReader();
+
+          reader.onload = function(e) {
+            const imageUrl = e.target.result;
+
+            const newProduct = {
+              id: Date.now(),
+              image: imageUrl,
+              category: category,
+              title: title,
+              description: description
+            };
+
+            let products = saved ? JSON.parse(saved) : [];
+            products.push(newProduct);
+            localStorage.setItem('og_catalog', JSON.stringify(products));
+
+            alert('¡Producto subido con éxito!');
+            uploadForm.reset();
+            modalOverlay.classList.remove('active');
+            location.reload();
+          };
+
+          reader.readAsDataURL(file);
+        }
+      });
+    }
+  });
+
+  function deleteProduct(id) {
+    if (confirm('¿Deseas eliminar este producto?')) {
+      let products = JSON.parse(localStorage.getItem('og_catalog') || '[]');
+      products = products.filter(p => p.id !== id);
+      localStorage.setItem('og_catalog', JSON.stringify(products));
+      location.reload();
+    }
+  }
+</script>
+
+</body>
+</html>

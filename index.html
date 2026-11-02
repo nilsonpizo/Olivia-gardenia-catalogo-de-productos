@@ -1,0 +1,244 @@
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olivia Gardenia - Diseño y Decoración</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:ital,wght@0,600;3,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<header class="header">
+<div class="logo-container">
+<a href="./index.html" class="logo-shape" title="Volver al Inicio">
+<img src="logo.png" alt="Logo" class="logo-img">
+</a>
+<div class="branding">
+<h1>Olivia Gardenia</h1>
+<p class="eslogan">Hazlo grande, hazlo único, hazlo con Olivia Gardenia</p>
+</div>
+</div>
+<nav class="nav">
+<a href="#inicio">Inicio</a>
+<a href="#galeria">Galería</a>
+<a href="#contacto">Contacto</a>
+<div class="nav-socials">
+<a href="https://www.instagram.com/olivia.gardenia_/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://www.facebook.com/search/top?q=Olivia%20Gardenia" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+<a href="https://www.tiktok.com/@olivia.gardenia7" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+</div>
+</nav>
+</header>
+
+<section id="inicio" class="hero">
+<div class="content-wrapper">
+<div class="hero-content">
+<h2>Diseño y decoración de eventos exclusivos</h2>
+<p>Diseño y decoración de eventos inolvidables.</p>
+<a href="#galeria" class="btn">Explorar Nuestros Diseños</a>
+</div>
+</div>
+</section>
+
+<section id="galeria" class="galeria-section">
+<h2>Nuestras Especialidades</h2>
+<div class="grid-galeria">
+<div class="card">
+<img src="bodas.jpg" alt="Bodas">
+<div class="card-body">
+<h3>Bodas</h3>
+<p>Mesa de honor, estructuras florales y caminos de luz.</p>
+<a href="bodas.html" class="btn-card">Ver Galería</a>
+</div>
+</div>
+
+<div class="card">
+<img src="quinceaneras.jpg" alt="Quinceañeras">
+<div class="card-body">
+<h3>Quinceañera</h3>
+<p>Celebraciones únicas, ambientación y detalles florales.</p>
+<a href="quinceaneras.html" class="btn-card">Ver Galería</a>
+</div>
+</div>
+
+<div class="card">
+<img src="bautizo.jpg" alt="Bautizos">
+<div class="card-body">
+<h3>Bautizo</h3>
+<p>Espacios angelicales, tonos neutros y detalles sagrados.</p>
+<a href="bautizo.html" class="btn-card">Ver Galería</a>
+</div>
+</div>
+
+<!-- Portada de Primera Comunión -->
+<div class="card">
+<img src="comunion.jpg" alt="Primera Comunión">
+<div class="card-body">
+<h3>Primera Comunión</h3>
+<p>Momentos de fe y pureza celebrados con una decoración delicada.</p>
+<a href="comunion.html" class="btn-card">Ver Galería</a>
+</div>
+</div>
+
+<!-- Portada de Iglesias -->
+<div class="card">
+<img src="iglesias.jpg" alt="Iglesias">
+<div class="card-body">
+<h3>Iglesias</h3>
+<p>Ornamentación floral solemne y pasillos nupciales para ceremonias sagradas.</p>
+<a href="iglesias.html" class="btn-card">Ver Galería</a>
+</div>
+</div>
+
+<!-- Portada de Cumpleaños -->
+<div class="card">
+<img src="cumpleanos.jpg" alt="Cumpleaños">
+<div class="card-body">
+<h3>Cumpleaños</h3>
+<p>Fiestas temáticas, decoración con globos y mesas dulces llenas de color.</p>
+<a href="cumpleanos.html" class="btn-card">Ver Galería</a>
+</div>
+</div>
+
+<!-- Portada de Eventos Varios -->
+<div class="card">
+<img src="eventos-varios.jpg" alt="Eventos Varios">
+<div class="card-body">
+<h3>Eventos Varios</h3>
+<p>Celebraciones especiales, aniversarios y montajes personalizados a tu medida.</p>
+<a href="eventos-varios.html" class="btn-card">Ver Galería</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Sección de Redes Sociales -->
+<section class="social-section" id="contacto">
+<h3>Síguenos en Redes Sociales</h3>
+<p>Descubre más contenido exclusivo y fotos de nuestros eventos en vivo.</p>
+<div class="social-buttons">
+<a href="https://www.instagram.com/olivia.gardenia_/" target="_blank" class="btn-social btn-social-instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
+<a href="https://www.facebook.com/search/top?q=Olivia%20Gardenia" target="_blank" class="btn-social btn-social-facebook"><i class="fa-brands fa-facebook"></i> Facebook</a>
+<a href="https://www.tiktok.com/@olivia.gardenia7" target="_blank" class="btn-social btn-social-tiktok"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+</div>
+</section>
+
+<footer class="footer">
+<div class="footer-links">
+<a href="#">Política de Privacidad</a>
+<a href="#">Términos y Condiciones</a>
+</div>
+<p>&copy; 2026 OLIVIA GARDENIA</p>
+<p class="designed">Diseñado pensando en tu felicidad.</p>
+</footer>
+
+<!-- Botón con el signo más (+) flotante -->
+<button class="fab-btn" id="openModalBtn" title="Subir nuevo producto">+</button>
+
+<!-- Ventana emergente (modal) para subir archivos -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-content">
+    <button class="close-modal" id="closeModalBtn">&times;</button>
+    <h2>Subir Nuevo Producto</h2>
+    
+    <form id="uploadForm">
+      <div class="form-group">
+        <label for="imageInput">Seleccionar Imagen:</label>
+        <input type="file" id="imageInput" accept="image/*" required>
+      </div>
+
+      <div class="form-group">
+        <label for="categoryInput">Categoría:</label>
+        <select id="categoryInput">
+          <option value="Bodas">Bodas</option>
+          <option value="Quinceañeras">Quinceañeras</option>
+          <option value="Bautizos">Bautizos</option>
+          <option value="Comunion">Primera Comunión</option>
+          <option value="Iglesias">Iglesias</option>
+          <option value="Cumpleaños">Cumpleaños</option>
+          <option value="Eventos Varios">Eventos Varios</option>
+          <option value="Anchetas">Anchetas</option>
+          <option value="Arreglos Florales">Arreglos Florales</option>
+          <option value="Desayunos Sorpresa">Desayunos Sorpresa</option>
+          <option value="Globos">Arte en Globos</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="titleInput">Título del Producto:</label>
+        <input type="text" id="titleInput" placeholder="Ej. Fiesta Temática" required>
+      </div>
+
+      <div class="form-group">
+        <label for="descInput">Descripción o Detalles:</label>
+        <textarea id="descInput" rows="3" placeholder="Detalles del arreglo..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">Publicar en el Catálogo</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  const openModalBtn = document.getElementById('openModalBtn');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+  const modalOverlay = document.getElementById('modalOverlay');
+  const uploadForm = document.getElementById('uploadForm');
+  const imageInput = document.getElementById('imageInput');
+  const categoryInput = document.getElementById('categoryInput');
+  const titleInput = document.getElementById('titleInput');
+  const descInput = document.getElementById('descInput');
+
+  openModalBtn.addEventListener('click', () => modalOverlay.classList.add('active'));
+  closeModalBtn.addEventListener('click', () => modalOverlay.classList.remove('active'));
+  modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) modalOverlay.classList.remove('active');
+  });
+
+  uploadForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const file = imageInput.files[0];
+    const category = categoryInput.value;
+    const title = titleInput.value;
+    const description = descInput.value;
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onload = function(e) {
+        const imageUrl = e.target.result;
+
+        const newProduct = {
+          id: Date.now(),
+          image: imageUrl,
+          category: category,
+          title: title,
+          description: description
+        };
+
+        saveProduct(newProduct);
+        alert('¡Producto subido con éxito para la categoría: ' + category + '!');
+        uploadForm.reset();
+        modalOverlay.classList.remove('active');
+      };
+
+      reader.readAsDataURL(file);
+    }
+  });
+
+  function saveProduct(product) {
+    const products = getProducts();
+    products.push(product);
+    localStorage.setItem('og_catalog', JSON.stringify(products));
+  }
+
+  function getProducts() {
+    const saved = localStorage.getItem('og_catalog');
+    return saved ? JSON.parse(saved) : [];
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,441 @@
+:root {
+  --bg-base: #fdfbf7;
+  --card-bg: #ffffff;
+  --text-color: #4a4441;
+  --accent-pink: #d8a7b1;
+  --accent-hover: #c44929;
+  --border-color: #e6dad1;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Montserrat', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-color);
+  font-family: var(--font-body);
+}
+
+/* Encabezado */
+.header {
+  background-color: var(--card-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  border-bottom: 2px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-shape {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--accent-pink);
+  background-color: #ffffff;
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.branding h1 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--text-color);
+}
+
+.eslogan {
+  font-size: 0.85rem;
+  color: #8c827a;
+  font-style: italic;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  transition: color 0.35s ease;
+}
+
+.nav a:hover {
+  color: var(--accent-hover);
+}
+
+.nav-socials {
+  display: inline-flex;
+  gap: 15px;
+  margin-left: 20px;
+}
+
+.nav-socials a {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  transition: color 0.35s ease;
+}
+
+.nav-socials a:hover {
+  color: var(--accent-pink);
+}
+
+/* Sección Hero */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  padding: 6rem 2rem;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 10;
+}
+
+.hero-content h2 {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--accent-pink);
+  color: var(--text-color);
+  padding: 0.75rem 2rem;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+.btn:hover {
+  background-color: var(--accent-hover);
+  color: #ffffff;
+}
+
+/* Sección de Galerías */
+.galeria-section {
+  padding: 5rem 3rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.galeria-section h2 {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.grid-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.card-body h3 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.card-body p {
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  color: #6e655f;
+}
+
+.btn-card {
+  display: inline-block;
+  background-color: var(--accent-pink);
+  color: var(--text-color);
+  padding: 0.75rem 2rem;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background-color 0.35s ease;
+}
+
+.btn-card:hover {
+  background-color: var(--accent-hover);
+  color: #ffffff;
+}
+
+/* Sección de Redes Sociales */
+.social-section {
+  background-color: var(--card-bg);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 3.5rem 2rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.social-section h3 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.social-section p {
+  font-size: 0.95rem;
+  color: #6e655f;
+  margin-bottom: 1.8rem;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #ffffff;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.btn-social:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+}
+
+.btn-social-instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.btn-social-facebook {
+  background-color: #1877f2;
+}
+
+.btn-social-tiktok {
+  background-color: #000000;
+}
+
+/* Footer */
+.footer {
+  background-color: #ebedd9;
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  color: #7c726a;
+}
+
+.footer-links {
+  margin-bottom: 1rem;
+}
+
+.footer-links a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.designed {
+  margin-top: 0.5rem;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+/* Diseño Adaptativo / Responsive */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+/* --- ESTILOS NUEVOS: BOTÓN FLOTANTE (+) Y VENTANA MODAL DE CARGA --- */
+
+.fab-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: var(--accent-pink);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s, transform 0.2s;
+  z-index: 1000;
+}
+
+.fab-btn:hover {
+  background-color: var(--accent-hover);
+  transform: scale(1.08);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: var(--card-bg);
+  color: var(--text-color);
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  position: relative;
+  font-family: var(--font-body);
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+  background: none;
+  border: none;
+}
+
+.modal-content h2 {
+  font-family: var(--font-heading);
+  color: var(--text-color);
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+.modal-content .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.modal-content .form-group label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.modal-content .form-group input, 
+.modal-content .form-group select, 
+.modal-content .form-group textarea {
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  background: #ffffff;
+  color: var(--text-color);
+}
+
+.modal-content .btn-submit {
+  display: inline-block;
+  background-color: var(--accent-pink);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content .btn-submit:hover {
+  background-color: var(--accent-hover);
+}
