@@ -1,57 +1,12 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bodas - Olivia Gardenia</title>
+<title>Galería de Bodas - Olivia Gardenia</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:ital,wght@0,600;3,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="estilos.css">
-<style>
-  /* Estilos fijos para que los cuadros se vean elegantes, simétricos y sin espacios vacíos */
-  .galeria-section {
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    padding: 40px 20px !important;
-  }
-  .grid-galeria {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
-    gap: 30px !important;
-    justify-content: center !important;
-  }
-  .grid-galeria .card {
-    background: #fff !important;
-    border-radius: 12px !important;
-    overflow: hidden !important;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
-    display: flex !important;
-    flex-direction: column !important;
-  }
-  .grid-galeria .card img {
-    width: 100% !important;
-    height: 250px !important;
-    object-fit: cover !important;
-    display: block !important;
-  }
-  .grid-galeria .card-body {
-    padding: 20px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    flex-grow: 1 !important;
-    justify-content: space-between !important;
-  }
-  .grid-galeria .card-body h3 {
-    font-family: 'Playfair Display', serif !important;
-    font-size: 1.25rem !important;
-    margin-bottom: 10px !important;
-    color: #333 !important;
-  }
-  .grid-galeria .card-body p {
-    font-size: 0.95rem !important;
-    color: #666 !important;
-    line-height: 1.5 !important;
-  }
-</style>
 </head>
 <body>
 
@@ -67,7 +22,7 @@
 </div>
 <nav class="nav">
 <a href="./index.html">Inicio</a>
-<a href="./index.html#galeria">Galería</a>
+<a href="./index.html#galeria">Galerías</a>
 <a href="#contacto">Contacto</a>
 <div class="nav-socials">
 <a href="https://www.instagram.com/olivia.gardenia_/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -79,14 +34,43 @@
 
 <section class="galeria-section">
 <h2>Bodas</h2>
-<p class="galeria-intro" style="text-align: center; margin-bottom: 30px;">Mesa de honor, estructuras florales y caminos de luz para el día más especial.</p>
+<p class="galeria-intro">Romance y sofisticación en cada detalle floral y estructural para el día más esperado.</p>
 
 <div class="grid-galeria" id="gridGaleria">
-  <!-- Las tarjetas cargan de forma dinámica y limpia -->
+  <!-- Las tarjetas cargan de forma ordenada -->
 </div>
 </section>
 
-<!-- Sección de Redes Sociales -->
+<!-- Botón Flotante (+) para subir archivos -->
+<div class="fab-container" style="position: fixed; bottom: 30px; right: 30px; z-index: 1000;">
+  <button id="openModalBtn" style="background-color: #d4af37; color: white; border: none; width: 60px; height: 60px; border-radius: 50%; font-size: 28px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-plus"></i></button>
+</div>
+
+<!-- Modal para carga de archivos -->
+<div id="uploadModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; justify-content: center; align-items: center;">
+  <div style="background: white; padding: 30px; border-radius: 12px; width: 90%; max-width: 400px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); position: relative;">
+    <h3 style="margin-bottom: 15px; font-family: 'Playfair Display', serif; color: #333;">Subir Nueva Foto</h3>
+    <form id="uploadForm">
+      <div style="margin-bottom: 12px;">
+        <label style="display: block; margin-bottom: 5px; font-size: 0.9rem; font-weight: 600;">Seleccionar Archivo:</label>
+        <input type="file" id="fileInput" accept="image/*" required style="width: 100%;">
+      </div>
+      <div style="margin-bottom: 12px;">
+        <label style="display: block; margin-bottom: 5px; font-size: 0.9rem; font-weight: 600;">Título:</label>
+        <input type="text" id="prodTitle" required placeholder="Ej. Decoración Especial" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px;">
+      </div>
+      <div style="margin-bottom: 20px;">
+        <label style="display: block; margin-bottom: 5px; font-size: 0.9rem; font-weight: 600;">Descripción:</label>
+        <textarea id="prodDesc" required placeholder="Descripción..." style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; resize: none; height: 80px;"></textarea>
+      </div>
+      <div style="display: flex; justify-content: flex-end; gap: 10px;">
+        <button type="button" id="closeModalBtn" style="background: #ccc; border: none; padding: 8px 15px; border-radius: 6px; cursor: pointer;">Cancelar</button>
+        <button type="submit" style="background: #d4af37; color: white; border: none; padding: 8px 15px; border-radius: 6px; cursor: pointer;">Publicar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
 <section class="social-section" id="contacto">
 <h3>Síguenos en Redes Sociales</h3>
 <p>Descubre más contenido exclusivo y fotos de nuestros eventos en vivo.</p>
@@ -106,187 +90,158 @@
 <p class="designed">Diseñado pensando en tu felicidad.</p>
 </footer>
 
-<!-- Botón con el signo más (+) flotante -->
-<button class="fab-btn" id="openModalBtn" title="Subir nuevo producto">+</button>
-
-<!-- Ventana emergente (modal) para subir archivos -->
-<div class="modal-overlay" id="modalOverlay">
-  <div class="modal-content">
-    <button class="close-modal" id="closeModalBtn">&times;</button>
-    <h2>Subir Nuevo Producto</h2>
-    
-    <form id="uploadForm">
-      <div class="form-group">
-        <label for="imageInput">Seleccionar Imagen:</label>
-        <input type="file" id="imageInput" accept="image/*" required>
-      </div>
-
-      <div class="form-group">
-        <label for="categoryInput">Categoría:</label>
-        <select id="categoryInput">
-          <option value="Bodas" selected>Bodas</option>
-          <option value="Quinceañeras">Quinceañeras</option>
-          <option value="Bautizos">Bautizos</option>
-          <option value="Comunion">Primera Comunión</option>
-          <option value="Iglesias">Iglesias</option>
-          <option value="Cumpleaños">Cumpleaños</option>
-          <option value="Eventos Varios">Eventos Varios</option>
-          <option value="Anchetas">Anchetas</option>
-          <option value="Arreglos Florales">Arreglos Florales</option>
-          <option value="Desayunos Sorpresa">Desayunos Sorpresa</option>
-          <option value="Globos">Arte en Globos</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="titleInput">Título del Producto:</label>
-        <input type="text" id="titleInput" placeholder="Ej. Camino Nupcial" required>
-      </div>
-
-      <div class="form-group">
-        <label for="descInput">Descripción o Detalles:</label>
-        <textarea id="descInput" rows="3" placeholder="Detalles del arreglo..." required></textarea>
-      </div>
-
-      <button type="submit" class="btn-submit">Publicar en el Catálogo</button>
-    </form>
-  </div>
-</div>
-
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const gridGaleria = document.getElementById('gridGaleria');
-    const TOTAL_FOTOS_CARPETA = 70;
+    const MAX_FOTOS = 60;
 
-    // Títulos limpios sin números para las imágenes específicas (del 61 al 64) y anteriores
-    const textosBodas = {
-      61: {
-        title: "Altar Nupcial con Alfombra Roja",
-        desc: "Majestuoso diseño de altar principal con pasillo central enmarcado en tonos blancos y rojos para una ceremonia inolvidable."
-      },
-      62: {
-        title: "Composición Floral Exótica y Palmas",
-        desc: "Hermoso arreglo floral colorido de temporada acompañado de hojas de palma que aportan frescura y elegancia tropical."
-      },
-      63: {
-        title: "Arco Floral de Entrada Principal",
-        desc: "Espectacular arco de flores finas montado sobre la puerta de ingreso de la iglesia para dar la bienvenida a los novios."
-      },
-      64: {
-        title: "Detalle de Sillas y Reclinatorios",
-        desc: "Ambientación floral delicada en los asientos principales del altar, combinando pureza y romance en cada detalle."
-      }
+    // Diccionario directo basado en tus capturas reales (boda-01 es centro de mesa, boda-02 es salón, boda-03 es iglesia)
+    const diccionarioTextos = {
+      "boda-01.jpg": { title: "Centros de Mesa Florales", desc: "Arreglos altos de flores finas sobre bases decorativas que aportan distinción a los comedores." },
+      "boda-02.jpg": { title: "Salón Principal de Bodas", desc: "Vista general de la elegante decoración del salón con iluminación cálida y mesas dispuestas para la celebración." },
+      "boda-03.jpg": { title: "Interiores de Iglesias y Altares", desc: "Arreglos florales solemnes ubicados en el pasillo y presbiterio para realzar la belleza sagrada del templo." },
+      "boda-04.jpg": { title: "Portal de Bienvenida Floral", desc: "Estructura exterior ornamentada con gran variedad de rosas y vegetación para recibir a los visitantes en la entrada principal." },
+      "boda-05.jpg": { title: "Zona de Ingreso y Alfombra Roja", desc: "Espacios diseñados con gracia y estilo, con arcos florales para recibir a los invitados en la entrada." },
+      "boda-06.jpg": { title: "Luminarias con Nombre Propio", desc: "Nombre corpóreo retroiluminado con bombillas de estilo vintage ubicado sobre la pista para resaltar la celebración" },
+      "boda-07.jpg": { title: "Zona de Invitados y Damas de Honor", desc: "Espacios cómodos y organizados donde los asistentes disfrutan de la recepción nupcial." },
+      "boda-08.jpg": { title: "Perspectiva General del Salón", desc: "Vista panorámica de un montaje de boda inolvidable organizado con total profesionalismo." },
+      "boda-09.jpg": { title: "Trono Imperial y Pastel Festivo", desc: "Rincón principal equipado con sillón capitoné, tarta en niveles y guirnalda de globos alegres." },
+      "boda-10.jpg": { title: "Platos y Minutas Personalizadas", desc: "Estructuras doradas y detalles de vajilla fina dispuestas con total pulcritud en el puesto de los novios." },
+      "boda-11.jpg": { title: "Estación Lateral con Velas y Cristales", desc: "Diseños florales alargados acompañados de soportes de cristal y una iluminación tenue y acogedora." },
+      "boda-12.jpg": { title: "Área de Brindis y Pastel Nupcial", desc: "Estación de repostería fina adaptada con la elegancia que exige una gran celebración." },
+      "boda-13.jpg": { title: "Decoración de Techos con Telas", desc: "Cielos rasos drapeados con telas vaporosas y una gran lámpara central que transforma la arquitectura del lugar." },
+      "boda-14.jpg": { title: "Iluminación Colgante y Follaje", desc: "Lámparas rústicas entrelazadas con vegetación abundante para dar un toque moderno y fresco." },
+      "boda-15.jpg": { title: "Carrito Decorativo con Flores", desc: "Composición multicolor montada en estructura metálica con ruedas para destacar espacios del salón." },
+      "boda-16.jpg": { title: "Rincón de Firmas y Recuerdos", desc: "Espacio íntimo y decorado para que los invitados dejen sus buenos deseos a la pareja." },
+      "boda-17.jpg": { title: "Fuente Colonial con Rosas Blancas", desc: "Pila de piedra rústica adornada con capullos puros y vegetación, ubicada al aire libre frente a una edificación religiosa." },
+      "boda-18.jpg": { title: "Comedor con Sillería Transparente", desc: "Distribución de mesas circulares con copas talladas y respaldos cristalinos en un recinto amplio." },
+      "boda-19.jpg": { title: "Dosel de Follaje Suspendido", desc: "Gran arreglo aéreo de vegetación tupida y flores blancas montado en la parte superior central de un salón con amplios ventanales y mesas de banquete." },
+      "boda-20.jpg": { title: "Vista Interior de Capilla", desc: "Toques tradicionales y solemnes que realzan la arquitectura de los recintos religiosos en bodas." },
+      "boda-21.jpg": { title: "Armonía Botánica y Floral", desc: "Follaje selecto y flores de temporada distribuidas con gran simetría sobre pedestales de madera." },
+      "boda-22.jpg": { title: "Sendero Religioso Enmarcado de Blancas Flores", desc: "Pasillo central de un templo cristiano decorado con abundantes arreglos florales y capullos claros a lo largo de las bancas para la ceremonia." },
+      "boda-23.jpg": { title: "Pedestales con Ramos Blancos", desc: "Fondo decorativo iluminado flanqueado por columnas claras con arreglos de follaje seleccionado." },
+      "boda-24.jpg": { title: "Esplendor en Blanco y Altura", desc: "Estructura monumental suspendida con caída de telas claras sobre un área amplia de recepción y ventanales." },
+      "boda-25.jpg": { title: "Fuentes y Jardinería Externa", desc: "Arreglos florales montados sobre fuentes de piedra rodeados de naturaleza." },
+      "boda-26.jpg": { title: "Mesa Principal de Novios Iluminada", desc: "Silueta de los novios bajo luces cálidas y un fondo personalizado con letrero luminoso." },
+      "boda-27.jpg": { title: "Comedor Campestre Acogedor", desc: "Espacio equipado con sillería plástica blanca y mantelería ligera en un recinto interior cerrado." },
+      "boda-28.jpg": { title: "Armonía Cromática Nupcial", desc: "Paleta de colores cuidadosamente seleccionada para el concepto visual de los novios en las mesas." },
+      "boda-29.jpg": { title:  "Reflejos de Cristal y Rosas", desc:  "Centros de mesa con jarrones alargados y capullos oscuros dispuestos sobre superficies espejadas." },
+      "boda-30.jpg": { title: "Perspectiva Panorámica del Banquete", desc: "Vista general de la pista principal rodeada por mesas dispuestas ordenadamente bajo una arquitectura moderna." },
+      "boda-31.jpg": { title: "Elegancia Nupcial en Altares", desc: "Composiciones florales delicadas que enmarcan espacios sagrados con absoluta solemnidad." },
+      "boda-32.jpg": { title: "Arte en Repostería Nupcial", desc: "Ponqué de bodas en varios niveles con decoración en tonos claros y soporte elevado transparente." },
+      "boda-33.jpg": { title: "Montaje de Sillas para Ceremonia", desc: "Distribución armónica de silletería orientada hacia el altar principal del evento." },
+      "boda-34.jpg": { title: "Cúpula con Lámpara Araña", desc: "Techos altos abovedados adornados con iluminación imponente y guirnaldas verdes colgantes." },
+      "boda-35.jpg": { title: "Estación de Recuerdos y Detalles", desc: "Pequeños obsequios y detalles personalizados dispuestos para los invitados de honor." },
+      "boda-36.jpg": { title: "Estructuras Florales de Vanguardia", desc: "Tendencias modernas en diseño botánico aplicadas a recepciones de gran categoría." },
+      "boda-37.jpg": { title: "Novia en Escenario Principal", desc: "Postal inolvidable de la novia luciendo su vestido junto a la decoración estelar." },
+      "boda-38.jpg": { title: "Ambiente de Banquete Nocturno", desc: "Iluminación ambiental y mesas vestidas para una velada mágica e inolvidable." },
+      "boda-39.jpg": { title: "Cortinajes y Velas Decorativas", desc: "Juego de telas traslúcidas y puntos de luz cálidos para generar un entorno íntimo." },
+      "boda-40.jpg": { title: "Zona de Brindis Exclusiva", desc: "Espacio preparado con elementos de alta gama para celebrar la unión de la pareja." },
+      "boda-41.jpg": { title: "Decoración Floral en Presbiterio", desc: "Arreglos imponentes diseñados para realzar el altar principal de la ceremonia." },
+      "boda-42.jpg": { title: "Mesas Principales Decoradas", desc: "Armonía absoluta en la mantelería y los centros de mesa del banquete nupcial." },
+      "boda-43.jpg": { title: "Vestido de Novia en Escenario", desc: "Momento estelar capturado junto a los arreglos florales y la iluminación ambiental." },
+      "boda-44.jpg": { title: "Recepción Elegante y Acogedora", desc: "Espacios amplios y decorados con el sello inconfundible de calidad nupcial." },
+      "boda-45.jpg": { title: "Detalles de Estilo en Mesas", desc: "Toques sutiles de diseño que marcan la diferencia en cada puesto de invitado." },
+      "boda-46.jpg": { title: "Santuario Decorado", desc: "Altar religioso ornamentado con columnas de piedra, estatuas sacras y arreglos florales laterales." },
+      "boda-47.jpg": { title: "Arreglos Florales Campestres", desc: "Frescura y naturalidad en composiciones botánicas ideales para celebraciones al aire libre." },
+      "boda-48.jpg": { title: "Pasillo Religioso Decorado", desc: "Bancas engalanadas con lazos y arreglos florales para una entrada tradicional solemne." },
+      "boda-49.jpg": { title: "Estructuras Elevadas con Flores", desc: "Centros de mesa altos que aportan majestuosidad y amplitud visual al salón." },
+      "boda-50.jpg": { title: "Callejón Nupcial con Velas", desc: "Camino iluminado con detalles tenues para un recibimiento mágico de los novios." },
+      "boda-51.jpg": { title: "Arquitectura Religiosa Embellecida", desc: "Templo decorado con respeto y elegancia para enmarcar la ceremonia eclesiástica." },
+      "boda-52.jpg": { title: "Pasillos Eclesiásticos de Ensueño", desc: "Perspectiva detallada de bancas y arreglos florales en el interior de la iglesia." },
+      "boda-53.jpg": { title: "Panel de Bienvenida y Arcos", desc: "Señalización y decoración floral dispuesta en la entrada principal del evento." },
+      "boda-54.jpg": { title: "Vista Panorámica de Templo", desc: "Estructura arquitectónica sagrada realzada con ornamentación floral selecta." },
+      "boda-55.jpg": { title: "Celebración y Banquete Nupcial", desc: "Ambiente festivo lleno de elegancia, risas y momentos inolvidables para los novios." },
+      "boda-56.jpg": { title: "Pasillo de Capilla Tradicional", desc: "Recorrido decorado con delicadeza para la procesión y ceremonia litúrgica." },
+      "boda-57.jpg": { title: "Altar Principal Iluminado", desc: "Foco visual sagrado decorado con arreglos florales de temporada y absoluta simetría." },
+      "boda-58.jpg": { title: "Nave Central de la Iglesia", desc: "Detalle completo del pasillo y bancas ornamentadas para recibir a los asistentes." },
+      "boda-59.jpg": { title: "Jardinera Ornamental Exclusiva", desc: "Base imponente con diseño botánico sofisticado para realzar espacios clave." },
+      "boda-60.jpg": { title: "Chimenea y Cortinaje Cálido", desc: "Pared principal de tono oscuro con letras distintivas en relieve y textiles verticales iluminados." }
     };
 
-    for (let i = 1; i <= TOTAL_FOTOS_CARPETA; i++) {
-      const numFormatted = i < 10 ? `0${i}` : `${i}`;
-      const fileName = `boda-${numFormatted}.jpg`;
-      
-      let info;
-      if (textosBodas[i]) {
-        info = textosBodas[i];
-      } else {
-        info = {
-          title: "Decoración y Ambientación de Boda",
-          desc: "Diseño y ambientación exclusiva creada con elegancia y romanticismo para celebrar el amor."
-        };
-      }
-
-      const card = document.createElement('div');
-      card.className = 'card';
-      
-      const img = new Image();
-      img.src = fileName;
-      
-      img.onload = function() {
-        card.innerHTML = `
-          <img src="${fileName}" alt="${info.title}">
-          <div class="card-body">
-            <div>
-              <h3>${info.title}</h3>
-              <p>${info.desc}</p>
-            </div>
-          </div>
-        `;
-        gridGaleria.appendChild(card);
-      };
-    }
-
+    // Cargar productos personalizados guardados en localStorage
     const saved = localStorage.getItem('og_catalog');
     const dynamicProducts = saved ? JSON.parse(saved) : [];
-    const productosBodas = dynamicProducts.filter(p => p.category === 'Bodas');
+    const productosBodas = dynamicProducts.filter(p => p.category === 'Bodas' || p.category === 'General');
 
     productosBodas.forEach(product => {
+      const wsMessage = encodeURIComponent(`Hola, me interesa obtener información sobre: ${product.title}`);
       const card = document.createElement('div');
       card.className = 'card';
       card.innerHTML = `
         <img src="${product.image}" alt="${product.title}">
         <div class="card-body">
-          <div>
-            <h3>${product.title}</h3>
-            <p>${product.description}</p>
-          </div>
-          <div style="margin-top: 15px; text-align: right;">
-            <button onclick="deleteProduct(${product.id})" style="background-color: #ff4d4d; color: white; border: none; padding: 6px 12px; border-radius: 20px; cursor: pointer; font-size: 0.8rem;">Eliminar</button>
+          <h3>${product.title}</h3>
+          <p>${product.description}</p>
+          <div style="display: flex; gap: 8px; margin-top: 15px;">
+            <a href="https://wa.me/?text=${wsMessage}" target="_blank" class="btn-card" style="text-align: center; flex: 1; text-decoration: none;">WhatsApp</a>
+            <button onclick="deleteProduct(${product.id})" style="background-color: #ff4d4d; color: white; border: none; padding: 6px 10px; border-radius: 20px; cursor: pointer; font-size: 0.85rem;">Eliminar</button>
           </div>
         </div>
       `;
       gridGaleria.appendChild(card);
     });
 
-    const openModalBtn = document.getElementById('openModalBtn');
-    const closeModalBtn = document.getElementById('closeModalBtn');
-    const modalOverlay = document.getElementById('modalOverlay');
-    const uploadForm = document.getElementById('uploadForm');
-    const imageInput = document.getElementById('imageInput');
-    const categoryInput = document.getElementById('categoryInput');
-    const titleInput = document.getElementById('titleInput');
-    const descInput = document.getElementById('descInput');
+    // Renderizar las 60 imágenes consultando directamente su nombre en el diccionario limpio
+    for (let i = 1; i <= MAX_FOTOS; i++) {
+      const numFormatted = i < 10 ? `0${i}` : `${i}`;
+      const fileName = `boda-${numFormatted}.jpg`;
+      const info = diccionarioTextos[fileName];
 
-    if(openModalBtn && modalOverlay) {
-      openModalBtn.addEventListener('click', () => modalOverlay.classList.add('active'));
-      closeModalBtn.addEventListener('click', () => modalOverlay.classList.remove('active'));
-      modalOverlay.addEventListener('click', (e) => {
-        if (e.target === modalOverlay) modalOverlay.classList.remove('active');
-      });
+      if (info) {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <img src="${fileName}" alt="${info.title}" onerror="this.parentElement.style.display='none'">
+          <div class="card-body">
+            <h3>${info.title}</h3>
+            <p>${info.desc}</p>
+          </div>
+        `;
+        gridGaleria.appendChild(card);
+      }
     }
 
-    if(uploadForm) {
-      uploadForm.addEventListener('submit', function(e) {
+    const modal = document.getElementById('uploadModal');
+    const openBtn = document.getElementById('openModalBtn');
+    const closeBtn = document.getElementById('closeModalBtn');
+    const form = document.getElementById('uploadForm');
+
+    if(openBtn && modal) {
+      openBtn.onclick = () => modal.style.display = 'flex';
+      closeBtn.onclick = () => modal.style.display = 'none';
+      window.onclick = (e) => { if (e.target == modal) modal.style.display = 'none'; };
+    }
+
+    if(form) {
+      form.onsubmit = (e) => {
         e.preventDefault();
+        const fileInput = document.getElementById('fileInput');
+        const title = document.getElementById('prodTitle').value;
+        const desc = document.getElementById('prodDesc').value;
 
-        const file = imageInput.files[0];
-        const category = categoryInput.value;
-        const title = titleInput.value;
-        const description = descInput.value;
-
+        const file = fileInput.files[0];
         if (file) {
           const reader = new FileReader();
-
-          reader.onload = function(e) {
-            const imageUrl = e.target.result;
-
+          reader.onload = function(event) {
             const newProduct = {
               id: Date.now(),
-              image: imageUrl,
-              category: category,
+              category: 'Bodas',
+              image: event.target.result,
               title: title,
-              description: description
+              description: desc
             };
 
-            let products = saved ? JSON.parse(saved) : [];
-            products.push(newProduct);
-            localStorage.setItem('og_catalog', JSON.stringify(products));
+            let catalog = JSON.parse(localStorage.getItem('og_catalog') || '[]');
+            catalog.push(newProduct);
+            localStorage.setItem('og_catalog', JSON.stringify(catalog));
 
-            alert('¡Producto subido con éxito!');
-            uploadForm.reset();
-            modalOverlay.classList.remove('active');
+            modal.style.display = 'none';
             location.reload();
           };
-
           reader.readAsDataURL(file);
         }
-      });
+      };
     }
   });
 
