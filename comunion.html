@@ -1,0 +1,293 @@
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Primera Comunión - Olivia Gardenia</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:ital,wght@0,600;3,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="estilos.css">
+<style>
+  /* Estilos fijos para que los cuadros se vean elegantes, simétricos y sin espacios vacíos */
+  .galeria-section {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 40px 20px !important;
+  }
+  .grid-galeria {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 30px !important;
+    justify-content: center !important;
+  }
+  .grid-galeria .card {
+    background: #fff !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .grid-galeria .card img {
+    width: 100% !important;
+    height: 250px !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+  .grid-galeria .card-body {
+    padding: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+    justify-content: space-between !important;
+  }
+  .grid-galeria .card-body h3 {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 1.25rem !important;
+    margin-bottom: 10px !important;
+    color: #333 !important;
+  }
+  .grid-galeria .card-body p {
+    font-size: 0.95rem !important;
+    color: #666 !important;
+    line-height: 1.5 !important;
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+<div class="logo-container">
+<a href="./index.html" class="logo-shape" title="Volver al Inicio">
+<img src="logo.png" alt="Logo" class="logo-img">
+</a>
+<div class="branding">
+<h1>Olivia Gardenia</h1>
+<p class="eslogan">Hazlo grande, hazlo único, hazlo con Olivia Gardenia</p>
+</div>
+</div>
+<nav class="nav">
+<a href="./index.html">Inicio</a>
+<a href="./index.html#galeria">Galería</a>
+<a href="#contacto">Contacto</a>
+<div class="nav-socials">
+<a href="https://www.instagram.com/olivia.gardenia_/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://www.facebook.com/search/top?q=Olivia%20Gardenia" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+<a href="https://www.tiktok.com/@olivia.gardenia7" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+</div>
+</nav>
+</header>
+
+<section class="galeria-section">
+<h2>Primera Comunión</h2>
+<p class="galeria-intro" style="text-align: center; margin-bottom: 30px;">Momentos de fe y pureza celebrados con una decoración delicada.</p>
+
+<div class="grid-galeria" id="gridGaleria">
+  <!-- Las tarjetas cargan de forma dinámica y limpia -->
+</div>
+</section>
+
+<!-- Sección de Redes Sociales -->
+<section class="social-section" id="contacto">
+<h3>Síguenos en Redes Sociales</h3>
+<p>Descubre más contenido exclusivo y fotos de nuestros eventos en vivo.</p>
+<div class="social-buttons">
+<a href="https://www.instagram.com/olivia.gardenia_/" target="_blank" class="btn-social btn-social-instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
+<a href="https://www.facebook.com/search/top?q=Olivia%20Gardenia" target="_blank" class="btn-social btn-social-facebook"><i class="fa-brands fa-facebook"></i> Facebook</a>
+<a href="https://www.tiktok.com/@olivia.gardenia7" target="_blank" class="btn-social btn-social-tiktok"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+</div>
+</section>
+
+<footer class="footer">
+<div class="footer-links">
+<a href="#">Política de Privacidad</a>
+<a href="#">Términos y Condiciones</a>
+</div>
+<p>&copy; 2026 OLIVIA GARDENIA</p>
+<p class="designed">Diseñado pensando en tu felicidad.</p>
+</footer>
+
+<!-- Botón con el signo más (+) flotante -->
+<button class="fab-btn" id="openModalBtn" title="Subir nuevo producto">+</button>
+
+<!-- Ventana emergente (modal) para subir archivos -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-content">
+    <button class="close-modal" id="closeModalBtn">&times;</button>
+    <h2>Subir Nuevo Producto</h2>
+    
+    <form id="uploadForm">
+      <div class="form-group">
+        <label for="imageInput">Seleccionar Imagen:</label>
+        <input type="file" id="imageInput" accept="image/*" required>
+      </div>
+
+      <div class="form-group">
+        <label for="categoryInput">Categoría:</label>
+        <select id="categoryInput">
+          <option value="Comunion" selected>Primera Comunión</option>
+          <option value="Bodas">Bodas</option>
+          <option value="Quinceañeras">Quinceañeras</option>
+          <option value="Bautizos">Bautizos</option>
+          <option value="Iglesias">Iglesias</option>
+          <option value="Cumpleaños">Cumpleaños</option>
+          <option value="Eventos Varios">Eventos Varios</option>
+          <option value="Anchetas">Anchetas</option>
+          <option value="Arreglos Florales">Arreglos Florales</option>
+          <option value="Desayunos Sorpresa">Desayunos Sorpresa</option>
+          <option value="Globos">Arte en Globos</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="titleInput">Título del Producto:</label>
+        <input type="text" id="titleInput" placeholder="Ej. Decoración de Altar" required>
+      </div>
+
+      <div class="form-group">
+        <label for="descInput">Descripción o Detalles:</label>
+        <textarea id="descInput" rows="3" placeholder="Detalles del arreglo..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">Publicar en el Catálogo</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const gridGaleria = document.getElementById('gridGaleria');
+    const TOTAL_FOTOS_CARPETA = 20;
+
+    const textosComunion = [
+      { title: "Decoración de Altar y Sencillez", desc: "Arreglos florales blancos y detalles sagrados para una ceremonia solemne." },
+      { title: "Mesa Principal de Celebración", desc: "Diseño delicado con tonos pasteles y elementos alusivos a la fecha." },
+      { title: "Detalle Especial de Comunión", desc: "Ornamentación y diseño exclusivo creado con dedicación para este momento." },
+      { title: "Centros de Mesa Sacramentales", desc: "Pequeños detalles florales que aportan pureza a las mesas de los invitados." },
+      { title: "Estación de Recuerdos y Detalles", desc: "Obsequios y detalles personalizados dispuestos con total elegancia." }
+    ];
+
+    // 1. Cargar únicamente las fotos que sí existen físicamente en la carpeta
+    for (let i = 1; i <= TOTAL_FOTOS_CARPETA; i++) {
+      const numFormatted = i < 10 ? `0${i}` : `${i}`;
+      const fileName = `comunion-${numFormatted}.jpg`;
+      const info = textosComunion[i - 1] || { 
+        title: `Detalle de Primera Comunión ${numFormatted}`, 
+        desc: "Ornamentación y diseño exclusivo creado con dedicación para este momento especial." 
+      };
+
+      const card = document.createElement('div');
+      card.className = 'card';
+      
+      // Creamos la imagen de forma interna para verificar si carga con éxito
+      const img = new Image();
+      img.src = fileName;
+      
+      img.onload = function() {
+        // Si la imagen existe físicamente en la carpeta, armamos la tarjeta y la añadimos
+        card.innerHTML = `
+          <img src="${fileName}" alt="${info.title}">
+          <div class="card-body">
+            <div>
+              <h3>${info.title}</h3>
+              <p>${info.desc}</p>
+            </div>
+          </div>
+        `;
+        gridGaleria.appendChild(card);
+      };
+      
+      // Si la imagen NO existe en la carpeta, la función simplemente no hace nada (se ignora por completo y no deja espacio)
+    }
+
+    // 2. Cargar los productos adicionales subidos mediante el modal
+    const saved = localStorage.getItem('og_catalog');
+    const dynamicProducts = saved ? JSON.parse(saved) : [];
+    const productosComunion = dynamicProducts.filter(p => p.category === 'Comunion');
+
+    productosComunion.forEach(product => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <img src="${product.image}" alt="${product.title}">
+        <div class="card-body">
+          <div>
+            <h3>${product.title}</h3>
+            <p>${product.description}</p>
+          </div>
+          <div style="margin-top: 15px; text-align: right;">
+            <button onclick="deleteProduct(${product.id})" style="background-color: #ff4d4d; color: white; border: none; padding: 6px 12px; border-radius: 20px; cursor: pointer; font-size: 0.8rem;">Eliminar</button>
+          </div>
+        </div>
+      `;
+      gridGaleria.appendChild(card);
+    });
+
+    // Lógica del modal de subida
+    const openModalBtn = document.getElementById('openModalBtn');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const uploadForm = document.getElementById('uploadForm');
+    const imageInput = document.getElementById('imageInput');
+    const categoryInput = document.getElementById('categoryInput');
+    const titleInput = document.getElementById('titleInput');
+    const descInput = document.getElementById('descInput');
+
+    if(openModalBtn && modalOverlay) {
+      openModalBtn.addEventListener('click', () => modalOverlay.classList.add('active'));
+      closeModalBtn.addEventListener('click', () => modalOverlay.classList.remove('active'));
+      modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) modalOverlay.classList.remove('active');
+      });
+    }
+
+    if(uploadForm) {
+      uploadForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const file = imageInput.files[0];
+        const category = categoryInput.value;
+        const title = titleInput.value;
+        const description = descInput.value;
+
+        if (file) {
+          const reader = new FileReader();
+
+          reader.onload = function(e) {
+            const imageUrl = e.target.result;
+
+            const newProduct = {
+              id: Date.now(),
+              image: imageUrl,
+              category: category,
+              title: title,
+              description: description
+            };
+
+            let products = saved ? JSON.parse(saved) : [];
+            products.push(newProduct);
+            localStorage.setItem('og_catalog', JSON.stringify(products));
+
+            alert('¡Producto subido con éxito!');
+            uploadForm.reset();
+            modalOverlay.classList.remove('active');
+            location.reload();
+          };
+
+          reader.readAsDataURL(file);
+        }
+      });
+    }
+  });
+
+  function deleteProduct(id) {
+    if (confirm('¿Deseas eliminar este producto?')) {
+      let products = JSON.parse(localStorage.getItem('og_catalog') || '[]');
+      products = products.filter(p => p.id !== id);
+      localStorage.setItem('og_catalog', JSON.stringify(products));
+      location.reload();
+    }
+  }
+</script>
+
+</body>
+</html>

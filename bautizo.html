@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galeria de Bautizo - Olivia Gardenia</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:ital,wght@0,600;3,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<header class="header">
+<div class="logo-container">
+<a href="./index.html" class="logo-shape" title="Volver al Inicio">
+<img src="logo.png" alt="Logo" class="logo-img">
+</a>
+<div class="branding">
+<h1>Olivia Gardenia</h1>
+<p class="eslogan">Hazlo grande, hazlo único, hazlo con Olivia Gardenia</p>
+</div>
+</div>
+<nav class="nav">
+<a href="./index.html">Inicio</a>
+<a href="./index.html#galeria">Galerías</a>
+<a href="#contacto">Contacto</a>
+<div class="nav-socials">
+<a href="https://www.instagram.com/olivia.gardenia_/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://www.facebook.com/search/top?q=Olivia%20Gardenia" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+<a href="https://www.tiktok.com/@olivia.gardenia7" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+</div>
+</nav>
+</header>
+
+<section class="galeria-section">
+<h2>Galeria de Bautizo</h2>
+<p class="galeria-intro">Delicadeza y ternura en cada detalle para celebrar este sagrado momento.</p>
+
+<div class="grid-galeria" id="gridGaleria">
+  <!-- Carga automática e infinita -->
+</div>
+</section>
+
+<section class="social-section" id="contacto">
+<h3>Síguenos en Redes Sociales</h3>
+<p>Descubre más contenido exclusivo y fotos de nuestros eventos en vivo.</p>
+<div class="social-buttons">
+<a href="https://www.instagram.com/olivia.gardenia_/" target="_blank" class="btn-social btn-social-instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
+<a href="https://www.facebook.com/search/top?q=Olivia%20Gardenia" target="_blank" class="btn-social btn-social-facebook"><i class="fa-brands fa-facebook"></i> Facebook</a>
+<a href="https://www.tiktok.com/@olivia.gardenia7" target="_blank" class="btn-social btn-social-tiktok"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+</div>
+</section>
+
+<footer class="footer">
+<div class="footer-links">
+<a href="#">Política de Privacidad</a>
+<a href="#">Términos y Condiciones</a>
+</div>
+<p>&copy; 2024 OLIVIA GARDENIA</p>
+<p class="designed">Diseñado pensando en tu felicidad.</p>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const gridGaleria = document.getElementById('gridGaleria');
+    const MAX_INTENTOS = 60;
+
+    const opcionesTextos = [
+      { title: "Ternura y Detalles Angelicales", desc: "Montajes delicados en tonos pasteles y elementos sutiles para celebrar la vida." },
+      { title: "Mesa Principal Temática", desc: "Espacio decorado con dulzura, arreglos florales tiernos y detalles personalizados." },
+      { title: "Arreglos Florales Suaves", desc: "Composiciones armónicas diseñadas especialmente para transmitir paz y alegría." },
+      { title: "Detalles de Bienvenida", desc: "Elementos decorativos y ornamentales que dan la bienvenida a los seres queridos." },
+      { title: "Ambiente Armonioso y Familiar", desc: "Distribución de espacios pensados para la comodidad y el disfrute de la familia." },
+      { title: "Estación de Recuerdos", desc: "Zona decorada con esmero para entregar los detalles especiales a los invitados." },
+      { title: "Arcos Orgánicos en Tonos Pastel", desc: "Estructuras sutiles con globos blancos y celestes/rosados muy delicados." },
+      { title: "Mesa de Dulces Celestiales", desc: "Repostería fina decorada con motivos angelicales y colores suaves." },
+      { title: "Centros de Mesa Tiernos", desc: "Pequeños arreglos florales que adornan las mesas de los invitados con gracia." },
+      { title: "Detalles con Alas y Cruces", desc: "Ornamentación temática que resalta la solemnidad y pureza del bautizo." },
+      { title: "Bautizo con Estilo y Calidez", desc: "Ambiente acogedor diseñado para un momento inolvidable en familia." },
+      { title: "Rincón Fotográfico Infantil", desc: "Espacio decorado con ternura para retratar al protagonista de la fiesta." },
+      { title: "Iluminación Suave y Armoniosa", desc: "Luces cálidas que envuelven el salón en una atmósfera de paz." },
+      { title: "Bases y Cilindros Blancos", desc: "Mobiliario minimalista que aporta limpieza visual a la decoración." },
+      { title: "Detalles Florales en Blanco Puro", desc: "Flores blancas que simbolizan la inocencia y el nuevo comienzo." },
+      { title: "Montaje General del Evento", desc: "Vista completa de una celebración organizada con absoluto amor y detalle." },
+      { title: "Estación de Recuerdo y Firmas", desc: "Libro de dedicatorias rodeado de arreglos florales y velas suaves." },
+      { title: "Guirnaldas de Follaje Sutil", desc: "Toques verdes entrelazados con cintas de raso blanco." },
+      { title: "Decoración de Sillas y Bancos", desc: " Lazos delicados que complementan la estética general del recinto." },
+      { title: "Ambiente Celestial y Delicado", desc: "Creación de escenarios mágicos y puros para el bautizo." },
+      { title: "Arco de Bienvenida al Salón", desc: "Primer detalle visual que cautiva a los invitados al llegar." },
+      { title: "Pastel Conmemorativo Decorado", desc: "Mesa de honor enfocada en resaltar la tarta principal del bautizo." },
+      { title: "Detalles Personalizados de Autor", desc: "Elementos únicos elaborados a mano para realzar la celebración." },
+      { title: "Armonía Visual en Tonos Blancos", desc: "Pureza y elegancia minimalista en cada rincón del espacio." },
+      { title: "Centros de Mesa con Velas", desc: "Iluminación de acento segura y tierna para las mesas familiares." },
+      { title: "Estética Angelical y Distinitiva", desc: "El sello de calidad Olivia Gardenia en eventos infantiles." },
+      { title: "Banderines y Detalles en Tela", desc: "Ornamentos colgantes que aportan un toque tierno al salón." },
+      { title: "Rincones de Paz y Alegría", desc: "Espacios decorados para generar sonrisas y buenos recuerdos." },
+      { title: "Montaje Profesional y Pulcro", desc: "Cuidado absoluto de la limpieza visual y estética del evento." },
+      { title: "Celebración Inolvidable de Fe", desc: "Memorias gráficas de un bautizo bellamente ambientado." },
+      { title: "Dulce Bienvenida Familiar", desc: "Detalles pensados para consentir a cada uno de los asistentes." },
+      { title: "Arreglos con Rosas y Margaritas", desc: "Flores frescas y sutiles que llenan de vida el ambiente." },
+      { title: "Cúpulas con Detalles Infantiles", desc: "Elementos decorativos resguardados con gran delicadeza." },
+      { title: "Iluminación Escénica Tierna", desc: "Efectos de luz suave para destacar la zona principal." },
+      { title: "Decoración de Espacios Interiores", desc: "Transformación acogedora de salones para Bautizos." },
+      { title: "Detalles que Tocan el Corazón", desc: "Pequeñas creaciones ornamentales cargadas de significado." },
+      { title: "Armonía entre Flores y Luz", desc: "El equilibrio perfecto para una ceremonia de Bautizo." },
+      { title: "Estación de Recuerdos Tiernos", desc: "Obsequios decorados con gracia para los padrinos e invitados." },
+      { title: "Diseño Exclusivo para Bebés", desc: "Confort y belleza visual unidos en una sola decoración." },
+      { title: "Cierre de Celebración Sagrada", desc: "Imágenes de una jornada llena de bendiciones y buen gusto." },
+      { title: "Arco Asimétrico en Tonos Claros", desc: "Tendencia moderna en globos para bautizos elegantes." },
+      { title: "Mobiliario Infantil Decorativo", desc: "Mesas y sillas adaptadas con gracia al diseño global." },
+      { title: "Detalles con Perlas y Listones", desc: "Ornamentos finos que elevan la categoría del montaje." },
+      { title: "Ambiente Festivo y Sutil", desc: "Alegría moderada y elegante para recibir al nuevo miembro de la familia." },
+      { title: "Paneles Gráficos Personalizados", desc: "Fondos impresos con mensajes de amor y bienvenida." },
+      { title: "Centros de Mesa Altos y Ligeros", desc: "Estructuras esbeltas con arreglos florales flotantes." },
+      { title: "Belleza en Cada Detalle", desc: "Minuciosidad en la colocación de cada elemento decorativo." },
+      { title: "Espacios Preparados con Amor", desc: "Trabajo artesanal enfocado en la felicidad de los padres." },
+      { title: "Iluminación Cálida Perimetral", desc: "Luces indirectas que dan un aspecto sumamente acogedor." },
+      { title: "Ramo Decorativo de Bienvenida", desc: "Flores de temporada dispuestas en la entrada principal." },
+      { title: "Armonía Estética Total", desc: "Coherencia de colores y texturas de principio a fin." },
+      { title: "Detalles Rústicos y Dulces", desc: "Toques campestres sutiles en bodegones decorativos." },
+      { title: "Escenografía para Retratos", desc: "Fondos limpios ideales para las fotos familiares." },
+      { title: "Celebración Llena de Luz", desc: "Ambiente iluminado de forma natural y artificial." },
+      { title: "Creaciones Únicas de Bautizo", desc: "Montajes irrepetibles diseñados a la medida de tu familia." },
+      { title: "Estilo Clásico Renovado", desc: "Tradición y modernidad en la decoración de bautizos." },
+      { title: "Detalles Florales Minimalistas", desc: "Menos es más cuando se trata de elegancia infantil." },
+      { title: "Zona de Recreo Armonizada", desc: "Espacios seguros y bonitos para los más pequeños." },
+      { title: "Elegancia en Miniatura", desc: "Pequeños ornamentos de gran valor estético." },
+      { title: "Recuerdos que Duran Siempre", desc: "La magia de un bautizo inolvidable plasmada en su decoración." }
+    ];
+
+    const saved = localStorage.getItem('og_catalog');
+    const dynamicProducts = saved ? JSON.parse(saved) : [];
+    const productosSeccion = dynamicProducts.filter(p => p.category === 'Bautizo');
+
+    productosSeccion.forEach(product => {
+      const wsMessage = encodeURIComponent(`Hola, me interesa obtener información sobre: ${product.title}`);
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.dataset.id = product.id;
+      card.innerHTML = `
+        <img src="${product.image}" alt="${product.title}">
+        <div class="card-body">
+          <h3>${product.title}</h3>
+          <p>${product.description}</p>
+          <div style="display: flex; gap: 8px; margin-top: 15px;">
+            <a href="https://wa.me/?text=${wsMessage}" target="_blank" class="btn-card" style="text-align: center; flex: 1; text-decoration: none;">WhatsApp</a>
+            <button onclick="deleteProduct(${product.id})" style="background-color: #ff4d4d; color: white; border: none; padding: 6px 10px; border-radius: 20px; cursor: pointer; font-size: 0.85rem;">Eliminar</button>
+          </div>
+        </div>
+      `;
+      gridGaleria.appendChild(card);
+    });
+
+    for (let i = 1; i <= MAX_INTENTOS; i++) {
+      const numFormatted = i < 10 ? `0${i}` : `${i}`;
+      const fileNameJpg = `bautizo-${numFormatted}.jpg`;
+      const fileNamePng = `bautizo-${numFormatted}.png`;
+      const textoAsignado = opcionesTextos[i - 1];
+
+      const imgTest = new Image();
+      imgTest.src = fileNameJpg;
+      imgTest.onload = function() {
+        agregarTarjeta(fileNameJpg, textoAsignado.title, textoAsignado.desc);
+      };
+      imgTest.onerror = function() {
+        const imgTestPng = new Image();
+        imgTestPng.src = fileNamePng;
+        imgTestPng.onload = function() {
+          agregarTarjeta(fileNamePng, textoAsignado.title, textoAsignado.desc);
+        };
+      };
+    }
+
+    function agregarTarjeta(imgSrc, title, desc) {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <img src="${imgSrc}" alt="${title}">
+        <div class="card-body">
+          <h3>${title}</h3>
+          <p>${desc}</p>
+        </div>
+      `;
+      gridGaleria.appendChild(card);
+    }
+  });
+
+  function deleteProduct(id) {
+    if (confirm('¿Deseas eliminar este producto de la galería?')) {
+      let products = JSON.parse(localStorage.getItem('og_catalog') || '[]');
+      products = products.filter(p => p.id !== id);
+      localStorage.setItem('og_catalog', JSON.stringify(products));
+      location.reload();
+    }
+  }
+</script>
+
+</body>
+</html>
