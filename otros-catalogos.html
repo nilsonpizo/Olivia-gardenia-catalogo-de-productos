@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Otros Catálogos | Olivia Gardenia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    body, p, a, span, li, button {
+      font-family: 'Montserrat', sans-serif;
+    }
+    h1, h2, h3, .titulo-seccion {
+      font-family: 'Playfair Display', serif;
+    }
+    .otros-catalogos-main {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 20px 60px;
+      text-align: center;
+    }
+    .otros-catalogos-main h2 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+    .otros-catalogos-main > p {
+      margin-bottom: 40px;
+      color: #555555;
+    }
+    .catalogos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+    .catalogo-card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 28px 22px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .catalogo-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+    .catalogo-card p {
+      font-size: 0.95rem;
+      color: #555555;
+      line-height: 1.5;
+    }
+    .catalogo-btn {
+      display: inline-block;
+      padding: 12px 20px;
+      background-color: #2c2c2c;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.25s ease;
+    }
+    .catalogo-btn:hover {
+      background-color: #4f4f4f;
+    }
+    .volver-inicio {
+      margin-top: 40px;
+      display: inline-block;
+      text-decoration: none;
+      color: #2c2c2c;
+      font-weight: 500;
+    }
+    .volver-inicio:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo-container">
+      <a href="index.html" class="logo-shape" title="Volver al Inicio">
+        <img src="logo.png" alt="Logo Olivia Gardenia" class="logo-img">
+      </a>
+      <div class="branding">
+        <h1>Olivia Gardenia</h1>
+        <p class="eslogan">Hazlo grande, hazlo único, hazlo con Olivia Gardenia</p>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="index.html">Inicio</a>
+      <a href="index.html#galeria">Galería</a>
+      <a href="otros-catalogos.html">Otros catálogos</a>
+      <div class="nav-socials">
+        <a href="https://www.instagram.com/olivia.gardenia_/" target="_blank" rel="noopener" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/search/top?q=Olivia%20Gardenia" target="_blank" rel="noopener" aria-label="Facebook">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="https://www.tiktok.com/@olivia.gardenia7" target="_blank" rel="noopener" aria-label="TikTok">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="otros-catalogos-main">
+    <h2>Otros Catálogos</h2>
+    <p>Elige el catálogo que deseas consultar para ver todas las opciones disponibles.</p>
+
+    <div class="catalogos-grid">
+      <div class="catalogo-card">
+        <div>
+          <h3>Catálogo de Comidas</h3>
+          <p>Opciones gastronómicas y menús preparados para acompañar tus eventos.</p>
+        </div>
+        <a href="catalogo-comidas.html" class="catalogo-btn">Ver catálogo</a>
+      </div>
+
+      <div class="catalogo-card">
+        <div>
+          <h3>Catálogo de Anchetas</h3>
+          <p>Detalles y anchetas especiales para regalar o celebrar cualquier ocasión.</p>
+        </div>
+        <a href="catalogo-anchetas.html" class="catalogo-btn">Ver catálogo</a>
+      </div>
+
+      <div class="catalogo-card">
+        <div>
+          <h3>Catálogo de Arreglos Florales</h3>
+          <p>Explora nuestros ramos, bouquets y decoraciones florales para cada ocasión.</p>
+        </div>
+        <a href="catalogo-arreglos-florales.html" class="catalogo-btn">Ver catálogo</a>
+      </div>
+    </div>
+
+    <a href="index.html" class="volver-inicio">← Volver al inicio</a>
+  </main>
+
+</body>
+</html>
